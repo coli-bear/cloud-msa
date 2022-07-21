@@ -21,14 +21,6 @@ management:
         include: refresh
 
 
-# cloud config actuator endpoints 활성화
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
-
-
 eureka:
   instance:
     instance-id: member-microservice
