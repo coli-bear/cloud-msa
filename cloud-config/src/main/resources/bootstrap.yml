@@ -1,0 +1,8 @@
+encrypt:
+  key: coli-bear_secret_key
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, beans

@@ -1,0 +1,39 @@
+server:
+  port: 18001
+
+spring:
+  profiles:
+    active: test
+  application:
+    name: member-service
+  config:
+    import: optional:configserver:http://localhost:18080/
+  cloud:
+    config:
+#      url: http://localhost:18080/
+      name: member-service
+
+# cloud config actuator endpoints 활성화
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+
+# cloud config actuator endpoints 활성화
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+
+eureka:
+  instance:
+    instance-id: member-microservice
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:18081/eureka
