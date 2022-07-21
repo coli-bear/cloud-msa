@@ -1,0 +1,8 @@
+default:
+#  message: "{cipher}6203d0805f171c5a8badb4defa16b0bd7621bbf9965a56396be8be546f854cfaf3c5cf621d52cfefa303c3eb97c56e42"
+  message: this is my text for config refresh test
+  application:
+    names:
+      - global
+      - prod
+      - test

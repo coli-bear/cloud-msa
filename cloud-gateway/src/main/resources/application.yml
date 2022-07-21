@@ -11,10 +11,20 @@ spring:
           uri: lb://MEMBER-SERVICE
           predicates:
             - Path=/members/**
+#            - Method=GET # Get 요청만!
+#            - Cookie=valid, kakao  # cookie에 valid값이 kakao인 경우 (- Cookie=name, regexp)
+          filters:
+#            - AddRequestHeader=token, 123456 # 요청 헤더 추가
+#            - AddResponseHeader=authenticated, yes # 응답 헤더 추가
+#            - AddRequestParameter=red, blue # 요청 파라미터 추가
+            - RewritePath=/members/?(?<segment>.*), /$\{segment} # /members/** 요청에서 members 제거
+            - CustomAuthFilter
         - id: instance-service
           uri: lb://INSTANCE-SERVICE
           predicates:
             - Path=/instances/**
+          filters:
+            - RewritePath=/instances/?(?<segment>.*), /$\{segment} # /members/** 요청에서 members 제거
 eureka:
   instance:
     instance-id: gateway-microservice
@@ -22,5 +32,5 @@ eureka:
     fetch-registry: true # ??? ????? ???
     register-with-eureka: true # ??? ????? ???
     service-url:
-      defaultZone: http://localhost:18081/eureka
+      defaultZone: http://localhost:8761/eureka
 

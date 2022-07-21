@@ -1,0 +1,2 @@
+default:
+  message: this is member`s prod config

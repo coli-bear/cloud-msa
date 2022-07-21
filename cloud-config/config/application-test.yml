@@ -1,0 +1,6 @@
+cloud:
+  - name: ncloud
+    access-key: access1
+
+  - name: aws
+    access-key: access222

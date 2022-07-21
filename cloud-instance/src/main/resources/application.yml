@@ -2,8 +2,19 @@ server:
   port: 18002
 
 spring:
+  profiles:
+    active: test
   application:
     name: instance-service
+  #  config:
+  #    import: optional:configserver:http://localhost:8888/
+  cloud:
+    config:
+      #      url: http://localhost:8888/
+      name: member-service
+
+# cloud config actuator endpoints 활성화
+
 
 eureka:
   instance:
@@ -12,4 +23,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:18081/eureka
+      defaultZone: http://localhost:8761/eureka

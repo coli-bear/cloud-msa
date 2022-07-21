@@ -1,8 +1,3 @@
-server:
-  port: 8888
-
-encrypt:
-  key: coli-bear_secret_key
 
 management:
   endpoints:

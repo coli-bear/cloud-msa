@@ -7,18 +7,13 @@ spring:
   application:
     name: member-service
   config:
-    import: optional:configserver:http://localhost:18080/
+    import: optional:configserver:http://localhost:8888/
   cloud:
     config:
-#      url: http://localhost:18080/
+#      url: http://localhost:8888/
       name: member-service
 
 # cloud config actuator endpoints 활성화
-management:
-  endpoints:
-    web:
-      exposure:
-        include: refresh
 
 
 eureka:
@@ -28,4 +23,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:18081/eureka
+      defaultZone: http://localhost:8761/eureka

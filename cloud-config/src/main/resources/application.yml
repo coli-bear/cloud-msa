@@ -1,20 +1,17 @@
-server:
-  port: 18080
-
 spring:
   application:
     name: config-server
 
-  profiles:
-    active: native
+#  profiles:
+#    active: native
 
   cloud:
     config:
       server:
         git:
-        #          uri: https://github.com/coli-bear/spring-cloud-config
+          uri: https://github.com/coli-bear/spring-cloud-config
         #          username:
         #          password:
-        encrypt.enabled: true
-        native:
-          search-locations: file:////Users/icraft/workspace/study/cloud-msa/cloud-config/config
+#        encrypt.enabled: true
+#        native:
+#          search-locations: file:////Users/icraft/workspace/study/cloud-msa/cloud-config/config
